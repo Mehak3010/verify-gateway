@@ -121,3 +121,8 @@ a human ever sees it.
   prompts to stress-test an agent's outputs before deployment) — out of
   scope for this prototype but a straightforward next module.
   
+Developed by,
+
+Mehak Arora
+
+[LinkedIn](https://www.linkedin.com/in/mehakar/)
