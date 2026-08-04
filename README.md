@@ -2,6 +2,14 @@
 
 **🔴 Live demo: [verify-gateway.streamlit.app](https://verify-gateway.streamlit.app/)** — try it with a seeded example or paste your own text, no setup required.
 
+## Screenshots
+
+**Clean report — passes cleanly:**
+<img width="1366" height="628" alt="{4760FD57-FA3D-4949-A876-9423DE5C5583}" src="https://github.com/user-attachments/assets/8a0eae73-627c-46f8-a629-b5b3f99c6b14" />
+
+**Fabricated legal citation — correctly rejected:**
+<img width="1366" height="586" alt="{F6C4331B-501F-457D-9C88-27CF687516C7}" src="https://github.com/user-attachments/assets/a2e7eb64-aac0-4cf0-a001-96257a3bd3bf" />
+
 A modular checkpoint that sits between a low-code / enterprise AI agent and
 its end-user output. It extracts factual claims (statistics, citations,
 legal references), checks each one against external evidence, and blocks
@@ -112,3 +120,4 @@ a human ever sees it.
 - Natural extension: adversarial red-teaming (auto-generating edge-case
   prompts to stress-test an agent's outputs before deployment) — out of
   scope for this prototype but a straightforward next module.
+  
