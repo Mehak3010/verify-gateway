@@ -1,5 +1,7 @@
 # Verification & Anti-Hallucination Gateway
 
+**🔴 Live demo: [verify-gateway.streamlit.app](https://verify-gateway.streamlit.app/)** — try it with a seeded example or paste your own text, no setup required.
+
 A modular checkpoint that sits between a low-code / enterprise AI agent and
 its end-user output. It extracts factual claims (statistics, citations,
 legal references), checks each one against external evidence, and blocks
@@ -35,6 +37,13 @@ Set these env vars to run it against real inputs:
 |---|---|
 | `ANTHROPIC_API_KEY` | Uses Claude for claim extraction + judging instead of regex heuristics |
 | `TAVILY_API_KEY` | Uses live web search instead of seeded mock evidence |
+
+There's also a small **built-in fact base** (`app/builtin_facts.py`) that's
+always checked first, regardless of mode — a stand-in for the kind of
+curated, pre-verified internal knowledge index (compliance policies,
+known-good statistics, prior fact-check rulings) a real enterprise gateway
+would maintain. This means even custom pasted text — not just the seeded
+examples — has *something* to verify against with zero API keys configured.
 
 ## Quick start (local)
 
@@ -79,6 +88,10 @@ POST /verify   {"text": "..."}     run the gateway on arbitrary text
    non-existent case law; correctly rejected.
 3. **Plausible-but-wrong statistic** — a subtly incorrect number dressed up
    as real Deloitte research; correctly flagged/rejected.
+4. **Low-code agent compliance report** — cites a fabricated regulation;
+   correctly rejected.
+5. **ERP agent handoff note** — a plausible but unconfirmable claim;
+   correctly flagged for human review rather than falsely passed.
 
 ## Why this matters for production AI rollouts
 
